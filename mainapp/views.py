@@ -17,11 +17,11 @@ FORMS = ['new_survey', new_survey]
 
 # Create your views here.
 def main(request):
-    title = 'Главная'
+    page_title = 'Главная'
 
     text = Surveys.objects.all()
 
-    content = {"title": title, "text": text}
+    content = {"page_title": page_title, "text": text}
 
     return render(request, 'mainapp/index.html', content)
  
@@ -35,8 +35,8 @@ def survey(request, pk=None):
         print('pk не было')
         text = Questions.objects.all()
 
-    content = {"text": text}
-    return render(request, "mainapp/survey.html", content)
+    context = {"text": text}
+    return render(request, "mainapp/survey.html", context)
 
 def get_text(request): 
     message = request.POST.get('text_answer_quesstion')
