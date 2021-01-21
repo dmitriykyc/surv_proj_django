@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+
+{% block content %}
+  <div class="row">
+  <div class="col-sm-2"></div>     
+
+        {% for i in text %}
+          <div class="col-sm-4">
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h4 class="card-title">{{i.title}}</h4>
+                <h5 class="card-title">Ответье на 4 вопроса мы сами угадаем кто вы</h5>
+                <h6 class="card-text">Дата начала:<p>{{i.date_start|date:"j E Y"}}</p> Дата Окончания:<p>{{i.date_finish|date:"j E Y"}}</p></h6>
+              <a href="{% url 'survey:survey' i.pk %}" class="btn btn-primary">Перейти к опросу</a>
+            </div>
+          </div>
+        </div>
+          {% if forloop.counter|divisibleby:"2" %}
+              <div class="col-sm-2"></div>
+              <br>
+              <div class="col-sm-2"></div>
+          {% endif %}        
+        {% endfor %}
+  </div>
+
+        
+    
+{% endblock content %}

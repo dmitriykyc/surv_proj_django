@@ -1,0 +1,90 @@
+[
+    {
+        "model": "mainapp.surveys",
+        "pk": 1,
+        "fields": {
+            "title": "Какие суперспособности",
+            "description": "Сбор статистики о суперспособностях населения",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2020-12-26"
+        }
+    },
+    {
+        "model": "mainapp.surveys",
+        "pk": 2,
+        "fields": {
+            "title": "Какие животные",
+            "description": "Сбор статистики о животных",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2020-11-01"
+        }
+    },
+    {
+        "model": "mainapp.surveys",
+        "pk": 3,
+        "fields": {
+            "title": "Жирновские новости",
+            "description": "Сбор статистики о Жирновске",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2021-01-01"
+        }
+    },
+    {
+        "model": "mainapp.surveys",
+        "pk": 4,
+        "fields": {
+            "title": "Еще что то",
+            "description": "Сбор статистики о еще чём то",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2026-01-01"
+        }
+    },
+    {
+        "model": "mainapp.surveys",
+        "pk": 5,
+        "fields": {
+            "title": "Какие суперспособности",
+            "description": "Сбор статистики о суперспособностях населения",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2020-12-26"
+        }
+    },
+    {
+        "model": "mainapp.surveys",
+        "pk": 6,
+        "fields": {
+            "title": "Какие животные",
+            "description": "Сбор статистики о животных",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2020-11-01"
+        }
+    },
+    {
+        "model": "mainapp.surveys",
+        "pk": 7,
+        "fields": {
+            "title": "Жирновские новости",
+            "description": "Сбор статистики о Жирновске",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2021-01-01"
+        }
+    },
+    {
+        "model": "mainapp.surveys",
+        "pk": 8,
+        "fields": {
+            "title": "Еще что то",
+            "description": "Сбор статистики о еще чём то",
+            "quantity_question": 4,
+            "date_start": "2020-11-15",
+            "date_finish": "2026-01-01"
+        }
+    }
+]

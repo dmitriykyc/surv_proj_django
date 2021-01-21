@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% endblock css %}
+    
+</head>
+
+<body>
+    {% block menu %}
+        <br>
+    <div class="row">
+    <div class="col-sm-2"></div>
+    <nav class="navbar navbar-light bg-light col-sm-7">
+        <a class="navbar-brand" href="/">
+        <img src="{% static 'icon/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        Небольшой опросник
+        </a>
+    </nav>
+    <button type="button" class="btn btn-primary btn-sm col-sm-1">Админка</button>
+    <div class="col-sm-2"></div>
+    </div>
+
+    <br><br>
+    {% endblock menu %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    {% block bootstrap %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Подключаем Bootstrap 4.5.3 JS -->    
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    {% endblock bootstrap %}
+</body>
+</html>

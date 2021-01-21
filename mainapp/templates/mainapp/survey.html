@@ -1,0 +1,110 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="card text-center col-sm-8">
+    <div class="card-header">
+      Привет! Мы начинаем опрос!
+    </div>
+
+    {% for i in text %}
+      
+    <div class="card-body">
+      <h5 class="card-title">{{i.text}}</h5>
+       <div class="form-check">
+        
+        {% if i.type_answer == 1 %}
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleInputEmail1">Ваш ответ:</label>
+              <input type="text" class="form-control" name="text_answer_quesstion">
+              <button type="submit" class="btn btn-primary">Переход куда-нибудь</button>
+            </div>
+          </form>
+          {% endif %}
+
+          {% if i.type_answer == 3 %}
+            {% if i.var_answer1 %}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  {{i.var_answer1}}
+                </label>
+              </div>
+            {% endif %}
+            {% if i.var_answer2 %}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  {{i.var_answer2}}
+                </label>
+              </div>
+            {% endif %}
+            {% if i.var_answer3 %}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  {{i.var_answer3}}
+                </label>
+              </div>
+            {% endif %}
+            {% if i.var_answer4 %}
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  {{i.var_answer4}}
+                </label>
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if i.type_answer == 2 %}
+            {% if i.var_answer1 %}
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              {{i.var_answer1}}
+            </label>
+            <br>
+            {% endif %}
+            {% if i.var_answer2 %}
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              {{i.var_answer2}}
+            </label>
+            <br>
+            {% endif %}
+            {% if i.var_answer3 %}
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              {{i.var_answer3}}
+            </label>
+            <br>
+            {% endif %}
+            {% if i.var_answer4 %}
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              {{i.var_answer4}}
+            </label>
+            <br>
+            {% endif %}
+          {% endif %}
+          
+
+      </div>
+
+      <!-- <hr class="my-5"> -->
+    </div>
+    <hr class="my-2">
+    
+    {% endfor %}
+    <a href="#" type = "submit"class="btn btn-primary">Переход куда-нибудь</a>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+{% endblock content %}

@@ -1,0 +1,106 @@
+[
+    {
+        "model": "mainapp.questions",
+        "pk": 1,
+        "fields": {
+            "survey_id": 1,
+            "text": "Какими вы бы хотели обладать? (можно выбрать несколько ответов)",
+            "type_answer": 2,
+            "var_answer1": "Невидимость",
+            "var_answer2": "Бесмертие",
+            "var_answer3": "Умение летать",
+            "var_answer4": "Остановка времени"
+        }
+    },
+    {
+        "model": "mainapp.questions",
+        "pk": 2,
+        "fields": {
+            "survey_id": 1,
+            "text": "Как думаете помогло бы это Вам в жизни?",
+            "type_answer": 1,
+            "var_answer1": "Введите текст:",
+            "var_answer2": "",
+            "var_answer3": "",
+            "var_answer4": ""
+        }
+    },
+    {
+        "model": "mainapp.questions",
+        "pk": 3,
+        "fields": {
+            "survey_id": 1,
+            "text": "В каком ключе вы бы использовали суперспособность?",
+            "type_answer": 3,
+            "var_answer1": "Во благо мира",
+            "var_answer2": "Пилил бы контент в тик-ток",
+            "var_answer3": "Стал бы злодеем",
+            "var_answer4": "Ну немного бы в своих целях"
+        }
+    },
+    {
+        "model": "mainapp.questions",
+        "pk": 4,
+        "fields": {
+            "survey_id": 1,
+            "text": "Хотели бы чтобы у всех вокруг были суперспособности?",
+            "type_answer": 2,
+            "var_answer1": "Да",
+            "var_answer2": "Нет",
+            "var_answer3": "",
+            "var_answer4": ""
+        }
+    },
+    {
+        "model": "mainapp.questions",
+        "pk": 5,
+        "fields": {
+            "survey_id": 2,
+            "text": "1111111111111111111111111111",
+            "type_answer": 2,
+            "var_answer1": "Невидимость",
+            "var_answer2": "Бесмертие",
+            "var_answer3": "Умение летать",
+            "var_answer4": "Остановка времени"
+        }
+    },
+    {
+        "model": "mainapp.questions",
+        "pk": 6,
+        "fields": {
+            "survey_id": 2,
+            "text": "222222222222222222",
+            "type_answer": 1,
+            "var_answer1": "Введите текст:",
+            "var_answer2": "",
+            "var_answer3": "",
+            "var_answer4": ""
+        }
+    },
+    {
+        "model": "mainapp.questions",
+        "pk": 7,
+        "fields": {
+            "survey_id": 2,
+            "text": "33333333333333333",
+            "type_answer": 3,
+            "var_answer1": "Во благо мира",
+            "var_answer2": "Пилил бы контент в тик-ток",
+            "var_answer3": "Стал бы злодеем",
+            "var_answer4": "Ну немного бы в своих целях"
+        }
+    },
+    {
+        "model": "mainapp.questions",
+        "pk": 8,
+        "fields": {
+            "survey_id": 2,
+            "text": "4564564564564564",
+            "type_answer": 2,
+            "var_answer1": "Да",
+            "var_answer2": "Нет",
+            "var_answer3": "",
+            "var_answer4": ""
+        }
+    }
+]

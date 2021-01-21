@@ -1,0 +1,33 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+
+{% block content %}
+  <div class="row">
+  <div class="col-sm-2"></div>     
+        
+        <form method="POST">
+            {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="Submit" name="submit1" value="Далее >>"/>
+
+
+        {{ ggg }}
+        {% if submitbutton == 'Далее >>' %}
+        <h1>Теперь приступим вк вопросам: </h1>
+        <br><br>
+        <!-- <h1>Your title {{ title }}</h1>
+        <h1>Your description {{ description }}</h1>
+        <h1>Your quantity_question {{ quantity_question }}</h1>
+        <h1>Your date_finish {{ date_finish }}</h1> -->
+
+        
+        {% endif %}
+        </form>
+  </div>
+
+        
+    
+{% endblock content %}
