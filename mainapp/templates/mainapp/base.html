@@ -20,13 +20,14 @@
     <br>
     <div class="row">
         <div class="col-sm-2"></div>
-        <nav class="navbar navbar-light bg-light col-sm-6">
+        <nav class="navbar navbar-light bg-light col-sm-8">
             <a class="navbar-brand" href="/">
                 <img src="{% static 'icon/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
                 Небольшой опросник
             </a>
+             {% include 'mainapp/includes/inc__menu.html' %}
         </nav>
-            {% include 'mainapp/includes/inc__menu.html' %}
+
         <div class="col-sm-2"></div>
     </div>
 

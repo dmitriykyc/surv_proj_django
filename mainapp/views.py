@@ -22,6 +22,7 @@ def main(request):
     text = Surveys.objects.all()
 
     content = {"page_title": page_title, "text": text}
+    print(request.resolver_match.url_name)
 
     return render(request, 'mainapp/index.html', content)
  
@@ -43,8 +44,9 @@ def get_text(request):
     print(message)
 
 
-def print_form(request):
+def create_survey(request):
     pk = 2
+    print('sdfsdf')
     # if request.method == 'POST':
     #     print('11111')
     #      name = request.POST.get("your_name")
@@ -75,6 +77,8 @@ def print_form(request):
         print('1')
         print(fields)
         userform = type_answer2()
-    
-    return render(request, "mainapp/hhh.html", context)
+        context = {"form": userform, 'submitbutton': submitbutton, 'title': title_, 'description': description_,
+                   'quantity_question': quantity_question_, 'date_finish': date_finish_}
+    print(request.resolver_match.url_name)
+    return render(request, "mainapp/create_survey.html", context)
     # return HttpResponseRedirect('main')
