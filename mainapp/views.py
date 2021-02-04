@@ -69,8 +69,7 @@ def create_survey(request):
             date_finish_ = userform.cleaned_data.get("date_finish")
             day,month,year = date_finish_.split('/')
             date_finish_ = datetime.date(int(year), int(month), int(day))
-            result = Surveys(title=title_, description=description_, quantity_question=quantity_question_, date_finish=date_finish_)
-            result.save()
+            Surveys.objects.create(title=title_, description=description_, quantity_question=quantity_question_, date_finish=date_finish_)
             return HttpResponseRedirect(reverse("main"))
         context = {"form": userform, 'submitbutton': submitbutton, 'title': title_, 'description': description_, 'quantity_question': quantity_question_, 'date_finish': date_finish_}
     else:

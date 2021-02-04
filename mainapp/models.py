@@ -9,8 +9,12 @@ class Surveys(models.Model):
     date_start = models.DateField(auto_now_add=True)
     date_finish = models.DateField()
 
+    class Meta:
+        verbose_name = 'Опрос'
+        verbose_name_plural = 'Опросы'
+
     def __str__(self):
-        return self.title
+        return f'Опрос: {self.title}'
     
 
 
@@ -23,9 +27,13 @@ class Questions(models.Model):
     var_answer2 = models.TextField(verbose_name='2 вариант', blank=True)
     var_answer3 = models.TextField(verbose_name='3 вариант', blank=True)
     var_answer4 = models.TextField(verbose_name='4 вариант', blank=True)
-    
+
+    class Meta:
+        verbose_name = 'Вопрос'
+        verbose_name_plural = "Вопросы"
+
     def __str__(self):
-        return self.text
+        return f'Вопрос {self.text} ({self.survey_id.title})'
     
 
 
@@ -38,7 +46,10 @@ class Result(models.Model):
     answer3 = models.TextField(verbose_name='Вернувшийся с формы ответ на вопрос 1', blank=True)
     answer4 = models.TextField(verbose_name='Вернувшийся с формы ответ на вопрос 1', blank=True)
 
+    class Meta:
+        verbose_name = "Результат"
+        verbose_name_plural = 'Результаты'
 
     def __str__(self):
-        return self.id_user
+        return f'Результат: {self.id_user}'
 

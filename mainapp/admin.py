@@ -5,4 +5,4 @@ admin.site.register(Surveys)
 admin.site.register(Result)
 admin.site.register(Questions)
 
-# Register your models here.
+

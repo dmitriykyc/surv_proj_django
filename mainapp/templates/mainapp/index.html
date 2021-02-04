@@ -12,7 +12,7 @@
           <div class="card text-white bg-info mb-3">
             <div class="card-body">
                 <h4 class="card-title">{{i.title}}</h4>
-                <h5 class="card-title">Ответье на 4 вопроса мы сами угадаем кто вы</h5>
+                <h5 class="card-title">{{ i.description }}</h5>
                 <h6 class="card-text">Дата начала:<p>{{i.date_start|date:"j E Y"}}</p> Дата Окончания:<p>{{i.date_finish|date:"j E Y"}}</p></h6>
               <a href="{% url 'survey:survey' i.pk %}" class="btn btn-primary">Перейти к опросу</a>
             </div>
