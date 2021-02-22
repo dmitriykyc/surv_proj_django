@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainapp',
     'create_survey_app',
+    'authapp',
 ]
 
 MIDDLEWARE = [

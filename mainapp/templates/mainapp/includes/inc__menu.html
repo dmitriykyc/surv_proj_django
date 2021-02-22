@@ -5,7 +5,7 @@
     <li class="nav-item">
         <a class="nav-link {% if request.resolver_match.url_name ==  'main' %}
             active
-    {% endif %}" href="{% url 'main' %}">Главная</a>
+    {% endif %}" href="{% url 'index' %}">Главная</a>
     </li>
     <li class="nav-item">
         <a class="nav-link {% if request.resolver_match.url_name == 'create_survey' %}
