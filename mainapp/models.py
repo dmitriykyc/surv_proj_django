@@ -35,7 +35,7 @@ class Questions(models.Model):
     def __str__(self):
         return f'Вопрос {self.text} ({self.survey_id.title})'
     
-
+# blank = true -  Это для проверки валидности в форм но НЕ на уровне БД а на уровне ДЖАНГИ! Чтобы форму потом на валидность проверить например!!!
 
 class Result(models.Model):
     id_user = models.CharField(verbose_name='ID пользователя', max_length=64, unique=False)
