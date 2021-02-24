@@ -125,3 +125,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# Тут какая то дичь начинается, это для того что мы расширяем собственную модель Юзера,
+# и унаследуем из класса AbstractUser в authapp.models
+AUTH_USER_MODEL = 'authapp.SurveyUser'

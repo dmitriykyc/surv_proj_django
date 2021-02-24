@@ -1,10 +1,12 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 
+from authapp.models import SurveyUser
+
 
 class UserLoginForm(AuthenticationForm):
     class Meta:
-        model = User
+        model = SurveyUser
         fields = ('username', 'password')
 
 
