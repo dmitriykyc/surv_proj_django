@@ -18,10 +18,12 @@ FORMS = ['new_survey', new_survey]
 # Create your views here.
 def main(request):
     page_title = 'Главная'
-
     text = Surveys.objects.all()
 
-    content = {"page_title": page_title, "text": text}
+    content = {
+        "page_title": page_title,
+        "text": text
+    }
     print(request.resolver_match.url_name)
 
     return render(request, 'mainapp/index.html', content)

@@ -9,17 +9,19 @@ from authapp.forms import UserLoginForm
 
 
 def login(request):
+    user_name = None
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
             username = request.POST.get('username')
             password = request.POST.get('password')
             user = auth.authenticate(username=username, password=password)
-            print(user)
             if user and user.is_active:
                 auth.login(request, user)
-                print(user)
+
                 return HttpResponseRedirect(reverse('mainapp:index'))
+
+
     else:
         form = UserLoginForm()
     context = {

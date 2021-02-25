@@ -2,21 +2,35 @@
 
 <ul class="nav nav-pills">
     {{ fkfkfk }}
+
     <li class="nav-item">
-        <a class="nav-link {% if request.resolver_match.url_name ==  'main' %}
+        <a class="nav-link {% if request.resolver_match.url_name ==  'index' %}
             active
     {% endif %}" href="{% url 'index' %}">Главная</a>
     </li>
+
     <li class="nav-item">
         <a class="nav-link {% if request.resolver_match.url_name == 'create_survey' %}
             active
     {% endif %}" href="{% url 'create_survey' %}">Создать опрос</a>
     </li>
+
     <li class="nav-item {% if request.resolver_match.url_name == 'admin' %}
             active
     {% endif %} ">
         <a class="nav-link" href="/admin/">Личный Кабинет</a>
     </li>
+
+    {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{%  url 'authapp:logout' %}">{{ user.username }}: Выйти</a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{%  url 'authapp:login' %}">Войти</a>
+        </li>
+    {% endif %}
+
     {#  <li class="nav-item">#}
     {#    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
     {#  </li>#}
