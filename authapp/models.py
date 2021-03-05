@@ -4,4 +4,4 @@ from django.db import models
 
 class SurveyUser(AbstractUser):
     age = models.PositiveIntegerField('Возраст', default=10)
-    avatar = models.ImageField(upload_to='avatars', blank=True)
+    avatar = models.ImageField('Аватар', upload_to='avatars', blank=True)
