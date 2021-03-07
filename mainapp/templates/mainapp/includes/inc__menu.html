@@ -15,15 +15,18 @@
     {% endif %}" href="{% url 'create_survey' %}">Создать опрос</a>
     </li>
 
-    <li class="nav-item {% if request.resolver_match.url_name == 'admin' %}
-            active
-    {% endif %} ">
-        <a class="nav-link" href="/admin/">Личный Кабинет</a>
-    </li>
+{#    <li class="nav-item {% if request.resolver_match.url_name == 'admin' %}#}
+{#            active#}
+{#    {% endif %} ">#}
+{#        <a class="nav-link" href="/admin/">Личный Кабинет</a>#}
+{#    </li>#}
 
     {% if user.is_authenticated %}
         <li class="nav-item">
-            <a class="nav-link" href="{%  url 'authapp:logout' %}">{{ user.username }}: Выйти</a>
+            <a class="nav-link" href="{%  url 'authapp:update' %}">{{ user.username }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{%  url 'authapp:logout' %}">Выйти</a>
         </li>
     {% else %}
         <li class="nav-item">

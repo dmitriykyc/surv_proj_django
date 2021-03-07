@@ -5,7 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse
 
-from authapp.forms import UserLoginForm, UserRegistrationForm
+from authapp.forms import UserLoginForm, UserRegistrationForm, UserUpdateForm
 
 
 def login(request):
@@ -52,3 +52,20 @@ def register (request):
     }
 
     return render(request, 'authapp/registration.html', context)
+
+
+def update(request):
+    page_title = 'Редактирование пользователя'
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('index'))
+    else:
+        form = UserUpdateForm(instance=request.user)
+    context = {
+        'form': form,
+        'page_title': page_title
+    }
+
+    return render(request, 'authapp/update.html', context)
