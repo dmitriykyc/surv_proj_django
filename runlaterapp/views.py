@@ -10,6 +10,7 @@ def index(request):
 
 
 def add_product(request, pk):
+    # print(request.user.runlater_set.filter(survey=pk).first)это посмотреть и понять как работает
     survey_item = RunLater.objects.filter(
         user=request.user,
         survey=pk
