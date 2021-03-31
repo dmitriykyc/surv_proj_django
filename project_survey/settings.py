@@ -130,3 +130,5 @@ STATICFILES_DIRS = (
 # Тут какая то дичь начинается, это для того что мы расширяем собственную модель Юзера,
 # и унаследуем из класса AbstractUser в authapp.models
 AUTH_USER_MODEL = 'authapp.SurveyUser'
+
+LOGIN_URL = '/auth/login'

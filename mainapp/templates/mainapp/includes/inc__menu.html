@@ -1,10 +1,9 @@
 {% load static %}
 
 <ul class="nav nav-pills">
-    {{ fkfkfk }}
 
     <li class="nav-item">
-        <a class="nav-link {% if request.resolver_match.url_name ==  'index' %}
+        <a class="nav-link {% if request.resolver_match.url_name == 'index' and not request.resolver_match.app_names %}
             active
     {% endif %}" href="{% url 'index' %}">Главная</a>
     </li>
@@ -23,19 +22,21 @@
 
     {% if user.is_authenticated %}
         <li class="nav-item">
-            <a class="nav-link" href="{%  url 'authapp:update' %}">{{ user.username }}</a>
+            <a class="nav-link " href="{%  url 'authapp:update' %}">{{ user.username }}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{%  url 'authapp:logout' %}">Выйти</a>
         </li>
     {% else %}
         <li class="nav-item">
-            <a class="nav-link" href="{%  url 'authapp:login' %}">Войти</a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'login'%}
+            active
+    {% endif %}" href="{%  url 'authapp:login' %}">Войти</a>
         </li>
     {% endif %}
 
     <li class="nav-item">
-        <a class="nav-link {% if request.resolver_match.url_name == 'index' and request.resolver_match.app_names == "['authapp']"  %}
+        <a class="nav-link {% if request.resolver_match.url_name == 'index' and request.resolver_match.app_name == 'runlaterapp'  %}
             active
     {% endif %}" href="{% url 'runlater:index' %}"><img src="{% static 'icon/later.png' %}" width="25" height="25" alt="Пройти опрос позже"></a>
     </li>
