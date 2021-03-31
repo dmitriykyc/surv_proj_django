@@ -40,6 +40,7 @@
             active
     {% endif %}" href="{% url 'runlater:index' %}"><img src="{% static 'icon/later.png' %}" width="25" height="25" alt="Пройти опрос позже"></a>
     </li>
+    <span>({{ total_survey_later.count|default:0 }}) </span>
 
     {#  <li class="nav-item">#}
     {#    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}

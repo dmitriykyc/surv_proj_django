@@ -13,7 +13,7 @@
                 <h5 class="card-title">{{ i.description }}</h5>
                 <h6 class="card-text">Дата начала:<p>{{i.date_start|date:"j E Y"}}</p> Дата Окончания:<p>{{i.date_finish|date:"j E Y"}}</p></h6>
               <a href="{% url 'survey:survey' i.pk %}" class="btn btn-primary">Перейти к опросу</a>
-              <a href="{% url 'runlater:add_product' i.pk %}" class="btn btn-primary">Пройти  позже</a>
+              <a href="{% url 'runlater:add_run_later' i.pk %}" class="btn btn-primary">Пройти  позже</a>
             </div>
           </div>
         </div>

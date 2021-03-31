@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import Surveys, Result, Questions
+from runlaterapp.models import RunLater
 
 import datetime
 from django.urls import reverse
@@ -18,6 +19,7 @@ FORMS = ['new_survey', new_survey]
 # Create your views here.
 def main(request):
     page_title = 'Главная'
+    # total_survey_later = RunLater.objects.filter(user=request.user) #Когда пользователь не залогинен, это ломается
     text = Surveys.objects.all()
 
     content = {

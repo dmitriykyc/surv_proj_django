@@ -7,10 +7,18 @@ from mainapp.models import Surveys
 
 class RunLater(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='runlater')
-    survey = models.IntegerField()
+    survey = models.ForeignKey(Surveys, on_delete=models.CASCADE)
 
-    @property
-    def total(self):
-        print('two')
-        aaaa = "hello"
-        return aaaa
+    @staticmethod
+    def total_quant2():
+        return '9999'
+
+    # тут в пробном варианте была фишка с подсчётом суммы в корзину, тоесть логика пописана тут была, я пока не нашел что сделать, но это тут.
+    # Урок 6.Корзина + AJAX + декораторы В первой половине до перерыва
+    # @property
+    # def total(self):
+    #     print('two')
+    #     aaaa = "hello"
+    #     return aaaa
+
+
