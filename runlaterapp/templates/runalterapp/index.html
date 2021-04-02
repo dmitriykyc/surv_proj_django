@@ -5,8 +5,8 @@
 {#    {{ user.id }}#}
     {% for ell in survey_later %}
         {% if user.id == ell.user.id %}
-            <div class="p-3 mb-2 bg-info text-white">Опрос: {{ ell.survey.title }} </div>
-            <a href="{% url 'runlater:delete_run_later' ell.pk %}"> delete </a>
+            <div class="p-3 mb-2 bg-info text-white">Опрос: {{ ell.survey.title }} <a href="{% url 'runlater:delete_run_later' ell.pk %}"> delete </a></div>
+
         {% else %}
             <div class="p-3 mb-2 bg-info text-white">У Вас нет отложенных опросов.</div>
         {% endif %}
@@ -18,6 +18,6 @@
     {% endfor %}
 
     <p> Kоличество опросов на попозже: {{ survey_later.count }}</p>
-{#    <p> {{ user.runlater }} Kоличество: {{ survey_later.0.total }}</p>#}
+{#    <p> Kоличество: {{ survey_later.0.count }}</p>#}
 
 {% endblock content %}
