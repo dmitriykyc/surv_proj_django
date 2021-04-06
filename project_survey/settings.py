@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'create_survey_app',
     'authapp',
     'runlaterapp',
+    'adminapp',
 ]
 
 MIDDLEWARE = [

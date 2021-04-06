@@ -14,31 +14,40 @@
     {% endif %}" href="{% url 'create_survey' %}">Создать опрос</a>
     </li>
 
-{#    <li class="nav-item {% if request.resolver_match.url_name == 'admin' %}#}
-{#            active#}
-{#    {% endif %} ">#}
-{#        <a class="nav-link" href="/admin/">Личный Кабинет</a>#}
-{#    </li>#}
+    {#    <li class="nav-item {% if request.resolver_match.url_name == 'admin' %}#}
+    {#            active#}
+    {#    {% endif %} ">#}
+    {#        <a class="nav-link" href="/admin/">Личный Кабинет</a>#}
+    {#    </li>#}
 
     {% if user.is_authenticated %}
         <li class="nav-item">
-            <a class="nav-link " href="{%  url 'authapp:update' %}">{{ user.username }}</a>
+            <a class="nav-link " href="{% url 'authapp:update' %}">{{ user.username }}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{%  url 'authapp:logout' %}">Выйти</a>
+            <a class="nav-link" href="{% url 'authapp:logout' %}">Выйти</a>
         </li>
     {% else %}
         <li class="nav-item">
-            <a class="nav-link {% if request.resolver_match.url_name == 'login'%}
+            <a class="nav-link {% if request.resolver_match.url_name == 'login' %}
             active
-    {% endif %}" href="{%  url 'authapp:login' %}">Войти</a>
+    {% endif %}" href="{% url 'authapp:login' %}">Войти</a>
+        </li>
+    {% endif %}
+
+    {% if user.is_superuser %}
+        <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'administration' %}
+            active
+    {% endif %}" href="{% url 'adminapp:index' %}">Админка</a>
         </li>
     {% endif %}
 
     <li class="nav-item">
-        <a class="nav-link {% if request.resolver_match.url_name == 'index' and request.resolver_match.app_name == 'runlaterapp'  %}
+        <a class="nav-link {% if request.resolver_match.url_name == 'index' and request.resolver_match.app_name == 'runlaterapp' %}
             active
-    {% endif %}" href="{% url 'runlater:index' %}"><img src="{% static 'icon/later.png' %}" width="25" height="25" alt="Пройти опрос позже"></a>
+    {% endif %}" href="{% url 'runlater:index' %}"><img src="{% static 'icon/later.png' %}" width="25" height="25"
+                                                        alt="Пройти опрос позже"></a>
     </li>
     <span>({{ total_survey_later.count|default:0 }}) </span>
 

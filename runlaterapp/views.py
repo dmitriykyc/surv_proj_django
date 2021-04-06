@@ -41,7 +41,7 @@ def add_run_later(request, pk):
 def delete_run_later(request, pk):
     survey_item = RunLater.objects.filter(
         user=request.user,
-        survey_id=pk
+        id=pk
     )
     if survey_item:
         survey_item.delete()
