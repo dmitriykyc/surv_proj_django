@@ -22,29 +22,29 @@ def index(request):
 
 
 @login_required
-def add_run_later(request, pk):
+def add_run_later(request, runlater_pk):
     survey_item = RunLater.objects.filter(
         user_id=request.user,
-        survey_id=pk
+        survey_id=runlater_pk
     ).first()
 
     if not survey_item:
         survey_item = RunLater.objects.create(
             user=request.user,
-            survey_id=pk
+            survey_id=runlater_pk
         )
         survey_item.save()
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 @login_required
-def delete_run_later(request, pk):
+def delete_run_later(request, delete_pk):
     survey_item = RunLater.objects.filter(
         user=request.user,
-        id=pk
+        survey_id=pk
     )
     if survey_item:
         survey_item.delete()
-        # survey_item.save()
+
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

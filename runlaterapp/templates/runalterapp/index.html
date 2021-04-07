@@ -5,10 +5,8 @@
 {#    {{ user.id }}#}
     {% for ell in survey_later %}
         {% if user.id == ell.user.id %}
-            <div class="p-3 mb-2 bg-info text-white" id="name_survey" data-ffff="{{ ell.survey.title }}">
-                <p data-ffff="{{ ell.survey.title }}" >Опрос: {{ ell.survey.title }}</p>
-                <a class="btn btn-light btn-sm" href="{% url 'runlater:delete_run_later' ell.pk %}">Delete</a>
-            </div>
+            <div class="p-3 mb-2 bg-info text-white">Опрос: {{ ell.survey.title }} </div>
+            <a href="{% url 'runlater:delete_run_later' ell.pk %}"> delete </a>
         {% else %}
             <div class="p-3 mb-2 bg-info text-white">У Вас нет отложенных опросов.</div>
         {% endif %}
